@@ -3,12 +3,15 @@ package com.fredporciuncula.material3.bottomsheet
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.selection.toggleable
@@ -34,6 +37,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import com.fredporciuncula.material3.bottomsheet.ui.theme.Material3BottomSheetTheme
@@ -69,6 +73,7 @@ fun BottomSheetSample() {
     horizontalAlignment = Alignment.CenterHorizontally,
     verticalArrangement = Arrangement.Center
   ) {
+    Spacer(modifier = Modifier.weight(1f))
     Row(
       Modifier.toggleable(
         value = skipPartiallyExpanded,
@@ -83,6 +88,13 @@ fun BottomSheetSample() {
     Button(onClick = { openBottomSheet = !openBottomSheet }) {
       Text(text = "Show Bottom Sheet")
     }
+    Spacer(modifier = Modifier.weight(1f))
+    Box(
+      modifier = Modifier
+        .fillMaxWidth()
+        .height(100.dp)
+        .background(Color.Red),
+    )
   }
 
 // Sheet content
