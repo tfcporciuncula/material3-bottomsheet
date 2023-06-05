@@ -109,7 +109,7 @@ fun BottomSheetSample() {
       var text by remember { mutableStateOf("") }
       OutlinedTextField(value = text, onValueChange = { text = it })
       LazyColumn {
-        items(50) {
+        items(5) {
           ListItem(
             headlineContent = { Text("Item $it") },
             leadingContent = {
